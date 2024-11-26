@@ -1,9 +1,15 @@
 """Contains Base class for policies"""
 
 from dataclasses import dataclass
+from enum import Enum
 
 from testsuite.kubernetes import KubernetesObject
 from testsuite.utils import check_condition
+
+
+class Strategy(Enum):
+    ATOMIC = "atomic"
+    MERGE = "merge"
 
 
 @dataclass
